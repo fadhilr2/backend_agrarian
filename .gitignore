@@ -1,0 +1,33 @@
+# Node.js dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment variables
+.env
+.env.*
+!/.env.example # If you have a .env.example file for reference
+
+# Build artifacts
+dist/
+build/
+coverage/
+
+# Logs
+logs/
+*.log
+
+# Operating System files
+.DS_Store # macOS
+Thumbs.db # Windows
+
+# Editor/IDE specific files
+.vscode/ # Visual Studio Code
+.idea/ # IntelliJ IDEA / WebStorm
+*.sublime-project
+*.sublime-workspace
+
+# Other temporary files
+tmp/
+temp/
