@@ -29,8 +29,45 @@ const get_prediction = async (input, type) => {
 };
 
 app.get("/", (req, res) => {
-  res.json({ msg: "API is running" });
+  res.send(`
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Email Verified</title>
+      <style>
+        body {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          background-color: #f0f2f5;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+        }
+        .container {
+          text-align: center;
+          padding: 40px;
+          background-color: white;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .message {
+          font-size: 24px;
+          color: #1c1e21;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="container">
+        <h1 class="message">Email Verified</h1>
+      </div>
+    </body>
+    </html>
+  `);
 });
+
 
 app.post("/yield_prediction", async (req, res) => {
   const pred = await get_prediction(req.body, "yield_prediction");
